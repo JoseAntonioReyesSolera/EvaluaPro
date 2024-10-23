@@ -4,6 +4,9 @@
  */
 package com.evaluapro.frames;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Alumne
@@ -15,6 +18,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        
     }
 
     /**
@@ -26,21 +30,53 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pantalla Principal");
         setResizable(false);
         setSize(new java.awt.Dimension(0, 0));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alumne\\Documents\\NetBeansProjects\\EvaluaPro\\EvaluaPro\\resources\\images.png")); // NOI18N
+
+        jButton1.setMaximumSize(new java.awt.Dimension(50, 50));
+        jButton1.setMinimumSize(new java.awt.Dimension(50, 50));
+        jButton1.setPreferredSize(new java.awt.Dimension(50, 50));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(jLabel1)
+                .addContainerGap(81, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
+
+        ImageIcon originalIcon = new ImageIcon("C:\\Users\\Alumne\\Documents\\NetBeansProjects\\EvaluaPro\\EvaluaPro\\resources\\LogIn.png");
+
+        // Escalar la imagen a nuevas dimensiones, por ejemplo, 100x100 píxeles
+        Image imagenEscalada = originalIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+
+        // Crear un nuevo ImageIcon con la imagen escalada
+        ImageIcon iconoEscalado = new ImageIcon(imagenEscalada);
+
+        // Establecer la imagen escalada en el jButton1
+        jButton1.setIcon(iconoEscalado);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -81,5 +117,7 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
