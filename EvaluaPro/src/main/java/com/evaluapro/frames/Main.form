@@ -35,7 +35,7 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="50" max="-2" attributes="0"/>
+              <Component id="BotonLogIn" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -46,7 +46,7 @@
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="49" max="32767" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="50" max="-2" attributes="0"/>
+              <Component id="BotonLogIn" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -60,8 +60,11 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="BotonLogIn">
       <Properties>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[50, 50]"/>
         </Property>
@@ -73,7 +76,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="ImageIcon originalIcon = new ImageIcon(&quot;C:\\Users\\Alumne\\Documents\\NetBeansProjects\\EvaluaPro\\EvaluaPro\\resources\\LogIn.png&quot;);&#xa;&#xa;        // Escalar la imagen a nuevas dimensiones, por ejemplo, 100x100 p&#xed;xeles&#xa;        Image imagenEscalada = originalIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);&#xa;&#xa;        // Crear un nuevo ImageIcon con la imagen escalada&#xa;        ImageIcon iconoEscalado = new ImageIcon(imagenEscalada);&#xa;&#xa;        // Establecer la imagen escalada en el jButton1&#xa;        jButton1.setIcon(iconoEscalado);"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="ImageIcon originalIcon = new ImageIcon(&quot;./resources/LogIn.png&quot;);&#xa;&#xa;        // Escalar la imagen a nuevas dimensiones, por ejemplo, 100x100 p&#xed;xeles&#xa;        Image imagenEscalada = originalIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);&#xa;&#xa;        // Crear un nuevo ImageIcon con la imagen escalada&#xa;        ImageIcon iconoEscalado = new ImageIcon(imagenEscalada);&#xa;&#xa;        // Establecer la imagen escalada en el BotonLogIn&#xa;        BotonLogIn.setIcon(iconoEscalado);"/>
         <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Main_jButton1"/>
       </AuxValues>
     </Component>
