@@ -31,7 +31,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="71" max="32767" attributes="0"/>
+              <EmptySpace pref="86" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
@@ -90,6 +90,9 @@
           <Dimension value="[50, 50]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonLogInActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="ImageIcon originalIcon = new ImageIcon(&quot;./resources/LogIn.png&quot;);&#xa;&#xa;        // Escalar la imagen a nuevas dimensiones, por ejemplo, 100x100 p&#xed;xeles&#xa;        Image imagenEscalada = originalIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);&#xa;&#xa;        // Crear un nuevo ImageIcon con la imagen escalada&#xa;        ImageIcon iconoEscalado = new ImageIcon(imagenEscalada);&#xa;&#xa;        // Establecer la imagen escalada en el BotonLogIn&#xa;        BotonLogIn.setIcon(iconoEscalado);"/>
         <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Main_jButton1"/>
