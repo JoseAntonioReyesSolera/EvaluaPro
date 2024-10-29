@@ -4,8 +4,9 @@
  */
 package com.evaluapro.logica;
 
+import com.evaluapro.classes.Usuario;
 import com.evaluapro.logica.DataAccess.DataAccess;
-
+import org.mindrot.jbcrypt.BCrypt;
 /**
  *
  * @author Alumne
@@ -13,9 +14,19 @@ import com.evaluapro.logica.DataAccess.DataAccess;
 public class CapaLogica {
     public boolean login(String email, String password) {
         DataAccess da = new DataAccess();
-        da.verifyLogin(email, password);
-        System.out.println(email);
-        System.out.println(password);
-        return true;
+        Usuario usuario = da.getUsuarioByEmail(email);
+
+        if (usuario == null) {
+            return false;
+        }
+
+        // Compara el hash de la contraseña ingresada
+        boolean isAuthenticated = BCrypt.checkpw(password, usuario.getPasswordHash());
+        
+        System.out.println("Email: " + email);
+        System.out.println("Login successful: " + isAuthenticated);
+        System.out.println("Usuario Instructor: " + usuario.isIsInstructor());
+
+        return isAuthenticated && usuario.isIsInstructor();
     }
 }

@@ -35,25 +35,27 @@ public class DataAccess {
         return connection;
     }
     
-    public Usuario verifyLogin(String email, String password){
+    public Usuario getUsuarioByEmail(String email){
         Connection connection = getConnection();
         
-        String sql = "select isInstructor from usuaris where Email = \'" + email + "\' and PasswordHash = \'" + password + "\';";
+        String sql = "SELECT Id, Nom, Email, PasswordHash, IsInstructor FROM usuaris WHERE Email = ?";
         System.out.println(sql);
         
         try {
             PreparedStatement selectStatement = connection.prepareStatement(sql);
+            selectStatement.setString(1, email);
             ResultSet resultSet = selectStatement.executeQuery();
             
-            Usuario user = new Usuario();
-            user.setId(resultSet.getInt("Id"));
-            user.setNom(resultSet.getString("Nom"));
-            user.setEmail(resultSet.getString("Email"));
-            user.setPasswordHash(resultSet.getString("PasswordHash"));
-            user.setIsInstructor(resultSet.getBoolean("IsInstructor"));
-            
-            return user;
-            
+          if (resultSet.next()) {
+                Usuario usuario = new Usuario();
+                usuario.setId(resultSet.getInt("Id"));
+                usuario.setNom(resultSet.getString("Nom"));
+                usuario.setEmail(resultSet.getString("Email"));
+                usuario.setPasswordHash(resultSet.getString("PasswordHash"));
+                usuario.setIsInstructor(resultSet.getBoolean("IsInstructor"));
+                
+                return usuario;
+            }
         } catch (SQLException ex) {
             Logger.getLogger(DataAccess.class.getName()).log(Level.SEVERE, null, ex);
         }
