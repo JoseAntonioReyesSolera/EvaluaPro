@@ -21,7 +21,7 @@ import javax.swing.UnsupportedLookAndFeelException;
  * @author Alumne
  */
 public class Main extends javax.swing.JFrame {
-
+    private boolean isLogged = false;
     /**
      * Creates new form Main
      */
@@ -126,18 +126,43 @@ public class Main extends javax.swing.JFrame {
 
     private void BotonLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonLogInActionPerformed
         // TODO add your handling code here:
-        LogIn login = new LogIn(this, true);
-        login.setVisible(true);
+        if(isLogged){
+            this.isLogged(false);
+        }
+        else {
+            LogIn login = new LogIn(this, true);
+            login.setVisible(true);
+        }
     }//GEN-LAST:event_BotonLogInActionPerformed
 
+    public void isLogged(boolean logged) {
+        isLogged = logged;
+        this.changeLogin(isLogged);
+        
+    }
+    
+    public void changeLogin(boolean logged) {
+        jLabel1.setVisible(!logged);
+        jLabel2.setVisible(!logged);
+    }
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         try {
+            //UIManager.setLookAndFeel("com.jtattoo.plaf.mint.MintLookAndFeel");
             UIManager.setLookAndFeel(new FlatMacLightLaf());
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        /*
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        */
         }
         
       

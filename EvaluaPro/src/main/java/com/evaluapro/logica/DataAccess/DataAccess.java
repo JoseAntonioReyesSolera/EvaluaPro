@@ -39,7 +39,6 @@ public class DataAccess {
         Connection connection = getConnection();
         
         String sql = "SELECT Id, Nom, Email, PasswordHash, IsInstructor FROM usuaris WHERE Email = ?";
-        System.out.println(sql);
         
         try {
             PreparedStatement selectStatement = connection.prepareStatement(sql);

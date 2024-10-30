@@ -11,12 +11,14 @@ import com.evaluapro.logica.CapaLogica;
  * @author Alumne
  */
 public class LogIn extends javax.swing.JDialog {
+    private Main main;
 
     /**
      * Creates new form LogIn
      */
     public LogIn(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        main = (Main) parent;
         initComponents();
     }
 
@@ -90,7 +92,9 @@ public class LogIn extends javax.swing.JDialog {
         CapaLogica cl = new CapaLogica();
         boolean datos = cl.login(EmailField.getText(), PasswordField.getText());
         if (datos) {
-        this.dispose();
+            
+            main.isLogged(true);
+            this.dispose();
         }
         
     }//GEN-LAST:event_LogInBotonActionPerformed

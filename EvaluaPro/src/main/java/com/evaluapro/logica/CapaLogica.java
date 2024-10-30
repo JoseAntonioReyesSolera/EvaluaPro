@@ -22,10 +22,6 @@ public class CapaLogica {
 
         // Compara el hash de la contraseña ingresada
         boolean isAuthenticated = BCrypt.checkpw(password, usuario.getPasswordHash());
-        
-        System.out.println("Email: " + email);
-        System.out.println("Login successful: " + isAuthenticated);
-        System.out.println("Usuario Instructor: " + usuario.isIsInstructor());
 
         return isAuthenticated && usuario.isIsInstructor();
     }
