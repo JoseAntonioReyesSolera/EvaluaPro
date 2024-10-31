@@ -6,6 +6,7 @@ package com.evaluapro.logica;
 
 import com.evaluapro.classes.Usuario;
 import com.evaluapro.logica.DataAccess.DataAccess;
+import javax.swing.JOptionPane;
 import org.mindrot.jbcrypt.BCrypt;
 /**
  *
@@ -22,7 +23,14 @@ public class CapaLogica {
 
         // Compara el hash de la contraseña ingresada
         boolean isAuthenticated = BCrypt.checkpw(password, usuario.getPasswordHash());
-
         return isAuthenticated && usuario.isIsInstructor();
+    }
+    
+    public void ventanaError(java.awt.Dialog parent, String texto) {
+        JOptionPane.showConfirmDialog(
+                parent,
+                texto,
+                "",
+                JOptionPane.CANCEL_OPTION);
     }
 }

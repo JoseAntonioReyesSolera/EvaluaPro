@@ -96,6 +96,9 @@ public class LogIn extends javax.swing.JDialog {
             main.isLogged(true);
             this.dispose();
         }
+        else {
+            cl.ventanaError(this,"El Usuario no es correcto o no es instructor.");
+        }
         
     }//GEN-LAST:event_LogInBotonActionPerformed
 
