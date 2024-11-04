@@ -44,8 +44,6 @@ public class LogIn extends javax.swing.JDialog {
 
         jLabel2.setText("Password:");
 
-        PasswordField.setText("jPasswordField1");
-
         LogInBoton.setText("Login");
         LogInBoton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         LogInBoton.addActionListener(new java.awt.event.ActionListener() {
