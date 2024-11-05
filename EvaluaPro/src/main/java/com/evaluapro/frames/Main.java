@@ -153,7 +153,7 @@ public class Main extends javax.swing.JFrame {
         jLabel2.setVisible(!logged);
         this.setLayout(null);
         BotonLogIn.setLocation(logged ? 6 : 329, logged ? 6 : 249);
-        this.setSize(logged ? 1000 : 400, logged ? 450 : 340);
+        this.setSize(logged ? 1000 : 400, logged ? 480 : 340);
        ml.setVisible(logged);
         this.revalidate();
         this.repaint();
